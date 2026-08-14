@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { direction: rtl; }
+
+body {
+  font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer base {
+  body { @apply bg-sand-50 text-ink-900 dark:bg-ink-950 dark:text-sand-50; }
+  * { @apply selection:bg-sand-300/60; }
+}
+
+.num { unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(61,111,96,0.3); border-radius: 8px; }
+
+.card { @apply bg-white dark:bg-ink-900 rounded-xl2 shadow-soft border border-ink-100/50 dark:border-ink-800/50; }
+.btn-primary { @apply bg-ink-600 hover:bg-ink-700 active:bg-ink-800 text-white font-medium rounded-xl px-5 py-3 transition-colors disabled:opacity-40 disabled:pointer-events-none; }
+.btn-secondary { @apply bg-sand-100 hover:bg-sand-200 dark:bg-ink-800 dark:hover:bg-ink-700 text-ink-800 dark:text-sand-100 font-medium rounded-xl px-5 py-3 transition-colors; }
+.input-field { @apply w-full rounded-xl border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-900 px-4 py-3 text-base outline-none focus:ring-2 focus:ring-ink-400 dark:focus:ring-ink-500 placeholder:text-ink-300; }
